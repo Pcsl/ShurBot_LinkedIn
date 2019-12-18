@@ -23,18 +23,7 @@ Si durante la instalacion del bot tenemos cualquier problema que no aparezca en 
 
 8. En la parte de abajo aparecera la terminal, igual se inicia automaticamente el bot o igual no. Si lo hace dara error. Pulsamos Control + C varias veces y luego Enter, hasta que aparezca todo el rato la misma linea una y otra vez, eso es que no hay nada funcionando
 
-9. Instalamos los paquetes que hacen falta, estos deberian ser:
-selenium
-bs4
-pandas
-(creo que con estos basta, si falta alguno mas os lo dira en mensaje de error y simplemente es añadirlo)
-
-     Para añadirlos ponemos en la terminal lo siguiente:
-     pip3 install "nombre del paquete a instalar" --user
-
-     Le damos a enter y ya deberia estar descargando el paquete.
-
-     Con esto no deberia dar problema. Asi que instalamos todo y ya estariamos listos
+9. Instalamos los paquetes que hacen falta. Para ello ejecutamos en la terminal `pip install -r requirements.txt` desde ShurtBot_linkdln/
 
 10. Ahora en el codigo del archivo easyapplybot.py, en las ultimas lineas 272=277, donde pone username, password, position, etc. Ahi ponemos lo que nos interesa, nuestro usuario de LinkedIn y contraseña, el lenguaje lo dejamos en español, y de position ponemos el trabajo que queremos y de location pues la ciudad o pais que queramos. Guardamos el archivo con Control + S
 
