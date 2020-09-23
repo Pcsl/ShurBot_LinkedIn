@@ -1,35 +1,39 @@
 # ShurBot_LinkedIn
+
 El ShurBot que te permite aplicar a todas las ofertas con EasyApply en LinkedIn
 
 ### Aviso
 
-Si durante la instalacion del bot tenemos cualquier problema que no aparezca en las instrucciones, buscar un tutorial en YouTube sobre como instalar X nos deberia resolver ese problema. El ordenador de cada uno es un mundo(distintos Sistemas Operativos que existen, programas instalados que puedan dar problemas, etc.).
+Si durante la instalacion del bot tenemos cualquier problema que no aparezca en las instrucciones, buscar un tutorial en YouTube sobre como instalar X nos debería resolver ese problema. El ordenador de cada uno es un mundo(distintos Sistemas Operativos, programas instalados que puedan dar problemas, distintas versiones de los programas, etc.).
 
 ## Instrucciones de uso:
 
-1. Instalamos Visual Studio Code https://code.visualstudio.com/
+1. Instalamos `Visual Studio Code` https://code.visualstudio.com/
 
-2. Instalamos Python https://www.python.org/downloads/ Click en el boton amarillo que pone 3.8.0
+2. Instalamos el lenguaje de programación `Python` https://www.python.org/downloads/ Descargamos la última versión, que estará en un botón amarillo grande por el centro de la pantalla (Si tenéis algún problema, miraos algún tutorial en Youtube que seguramente os solucione todo)
+3. Creamos una carpeta donde queramos, y ahí copiamos lo que hemos extraído del archivo `.zip`
 
-3. Creamos una carpeta donde queramos, y ahi copiamos lo que hemos extraido del .zip
+4. Abrimos Visual Studio y le damos a `Open Folder`, abrimos desde el programa la carpeta que acabamos de crear al haber extraído el .zip
 
-4. Abrimos Visual Studio y le damos a Open Folder, abrimos la carpeta que acabamos de crear
+5. Instalamos la extensión de Python en Visual Studio. Para ello vamos a la barra izquierda y vemos el icono de los 4 cuadrados. Buscamos en la barra de búsqueda `python` e instalamos la primera extensión, la oficial de Microsoft
+6. En la barra de la izquierda, arriba, hay un icono de 2 hojas, si hacemos click aparecerá el menú de documentos
 
-5. En la parte izquierda apareceran los archivos, sino, hacemos click en el icono de los 2 documentos solapados y aparece el menu de documentos
+7. Hacemos doble click en `easyapplybot.py` para ver el código del archivo
 
-6. Doble click para ver el codigo del archivo easyapplybot.py
+8. Ahora volvemos otra vez a donde clickamos anteriormente para ver el archivo, pero le damos click derecho, y le damos a `Run Python File in Terminal`, que saldrá de las últimas opciones disponibles
 
-7. Ahora volvemos otra vez a donde clickamos para ver el archivo, pero le damos click derecho, y le damos a Run Python File in Terminal
+9. En la parte de abajo aparecera la terminal, igual se inicia automaticamente el bot o igual no. Si lo hace dará error, ya que falta configurarlo. Pulsamos Control + C varias veces y luego Enter, hasta que aparezca todo el rato la misma linea una y otra vez, eso es que no hay nada funcionando
 
-8. En la parte de abajo aparecera la terminal, igual se inicia automaticamente el bot o igual no. Si lo hace dara error. Pulsamos Control + C varias veces y luego Enter, hasta que aparezca todo el rato la misma linea una y otra vez, eso es que no hay nada funcionando
+10. Instalamos los paquetes que hacen falta. Para ello copiamos esto y lo pegamos en la terminal: `pip install -r requirements.txt` le damos a enter y ejecutará el comando.
+    Si os da algún error, podéis probar a añadir `--user`, quedaría así: `pip install -r requirements.txt --user`
 
-9. Instalamos los paquetes que hacen falta. Para ello ejecutamos en la terminal `pip install -r requirements.txt` desde ShurtBot_linkdln/
+11. Ahora tenemos que modificar el archivo `config.ini` donde pone `username`, `password`, `position` y `location`. Ahí ponemos lo que nos interesa, nuestro usuario de LinkedIn y contraseña, y de `position` ponemos el trabajo que queremos y de `location` pues la ciudad o país que queramos. Guardamos los cambios en el archivo
 
-10. Ahora en el codigo del archivo easyapplybot.py, en las ultimas lineas 272=277, donde pone username, password, position, etc. Ahi ponemos lo que nos interesa, nuestro usuario de LinkedIn y contraseña, el lenguaje lo dejamos en español, y de position ponemos el trabajo que queremos y de location pues la ciudad o pais que queramos. Guardamos el archivo con Control + S
+12. Con todo listo, ejecutamos el programa, dándole a `Run Python File in Terminal` como antes
 
-11. Con todo listo ejecutamos el programa, dandole a Run Python File in Terminal
+13. Ya deberia de estar funcionando. Como aclaración, decir que el CV, el teléfono y todo ese rollo no tiene nada que ver con el bot, eso lo configuramos nosotros en nuestra cuenta de LinkedIn para que cuando hacemos EasyApply salga el CV por defecto.
 
-12. Ya deberia de estar funcionando. Como aclaracion, decir que el CV y todo ese rollo no tiene nada que ver con el bot, eso lo configuramos nosotros previamente en nuestra cuenta de LinkedIn para que cuando hacemos EasyApply salga el CV por defecto.
+14. Para parar el bot, podemos ir a la terminal, clickar sobre ella, y pulsar `Control + C`
 
-
-Varios shurs ya lo preguntaron. Este bot vale para todos los trabajos y todas los lugares del mundo. Que queremos buscar trabajo en Madrid como Android Developer, pues hacemos lo dicho en el paso 10 y listo. Que queremos buscar en otro sitio u otro puesto. Pues paramos el bot, si es que esta funcionando, nos vamos al codigo y volvemos a cambiar *position* y *location*. Guardamos de nuevo el archivo y volvemos a iniciar el bot de nuevo.
+Varios shurs ya lo preguntaron. Este bot vale para **todos los trabajos y todos los lugares del mundo**. Que queremos buscar trabajo de _Android Developer en Madrid_, pues modificamos el archivo `config.ini` y listo. Que queremos buscar en otro sitio u otro puesto (_Comercial de ventas en Albacete_) pues cambiamos los parámetros `position` y `location` en el archivo y listo.
+Para que los cambios tengan efecto hay que iniciar el bot después de haber guardado la nueva configuración en `config.ini`.

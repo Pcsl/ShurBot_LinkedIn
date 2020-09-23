@@ -161,10 +161,9 @@ class EasyApplyBot:
                     jobs_per_page = jobs_per_page + 25
                     count_job = 0
                     logging.info(
-                        '\n****************************************\n')
-                    logging.info('\t\tGoing to next page')
-                    logging.info(
-                        '\n****************************************\n')
+                        '\n****************************************\n'
+                        + '\tGoing to the next page'
+                        + '\n****************************************\n')
                     self.avoid_lock()
                     self.browser, jobs_per_page = self.next_jobs_page(
                         jobs_per_page)
