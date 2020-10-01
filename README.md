@@ -27,13 +27,13 @@ Si durante la instalacion del bot tenemos cualquier problema que no aparezca en 
 10. Instalamos los paquetes que hacen falta. Para ello copiamos esto y lo pegamos en la terminal: `pip install -r requirements.txt` le damos a enter y ejecutará el comando.
     Si os da algún error, podéis probar a añadir `--user`, quedaría así: `pip install -r requirements.txt --user`
 
-11. Ahora tenemos que modificar el archivo `config.ini` donde pone `username`, `password`, `position` y `location`. Ahí ponemos lo que nos interesa, nuestro usuario de LinkedIn y contraseña, y de `position` ponemos el trabajo que queremos y de `location` pues la ciudad o país que queramos. Guardamos los cambios en el archivo
+11. Ahora tenemos que modificar el archivo `config.ini` donde pone `username`, `password`, `position`, `location` y `language`. Ahí ponemos lo que nos interesa, nuestro usuario de LinkedIn y contraseña, y de `position` ponemos el trabajo que queremos, de `location` pues la ciudad o país que queramos y de `language` ponemos `es` si tenemos el LinkedIn en español o `en` si lo tenemos en inglés. Guardamos los cambios en el archivo
 
 12. Con todo listo, ejecutamos el programa, dándole a `Run Python File in Terminal` como antes
 
-13. Ya deberia de estar funcionando. Como aclaración, decir que el CV, el teléfono y todo ese rollo no tiene nada que ver con el bot, eso lo configuramos nosotros en nuestra cuenta de LinkedIn para que cuando hacemos EasyApply salga el CV por defecto.
+13. Ya deberia de estar funcionando. Como aclaración, decir que el CV, el teléfono y todos esos datos que enviamos al aplicar no tienen nada que ver con el bot, eso lo configuramos nosotros en nuestra cuenta de LinkedIn para que cuando hacemos EasyApply salga el CV por defecto.
 
 14. Para parar el bot, podemos ir a la terminal, clickar sobre ella, y pulsar `Control + C`
 
-Varios shurs ya lo preguntaron. Este bot vale para **todos los trabajos y todos los lugares del mundo**. Que queremos buscar trabajo de _Android Developer en Madrid_, pues modificamos el archivo `config.ini` y listo. Que queremos buscar en otro sitio u otro puesto (_Comercial de ventas en Albacete_) pues cambiamos los parámetros `position` y `location` en el archivo y listo.
+Varios shurs ya lo preguntaron. Este bot vale para **todos los trabajos y todos los lugares del mundo**. Que queremos buscar trabajo de _Android Developer en Madrid_, pues modificamos el archivo `config.ini` y listo. Que queremos buscar en otro sitio u otro puesto (por ejemplo _Comercial de ventas en Albacete_) pues cambiamos los parámetros `position` y `location` en el archivo y listo.
 Para que los cambios tengan efecto hay que iniciar el bot después de haber guardado la nueva configuración en `config.ini`.

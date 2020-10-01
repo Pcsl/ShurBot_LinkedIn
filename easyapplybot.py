@@ -18,7 +18,7 @@ from urllib.request import urlopen
 class EasyApplyBot:
     MAX_APPLICATIONS = 500
 
-    def __init__(self, username, password, position, location, appliedJobIDs, filename):
+    def __init__(self, username, password, position, location, language, appliedJobIDs, filename):
         logging.info("\nWelcome to Easy Apply Bot\n")
         dirpath = os.getcwd()
         chromepath = dirpath + '/assets/chromedriver.exe'
@@ -59,22 +59,6 @@ class EasyApplyBot:
         except TimeoutException:
             logging.info(
                 "TimeoutException! Username/password field or login button not found")
-
-    # def wait_for_login(self):
-    #     if language == "en":
-    #         title = "Sign In to LinkedIn"
-    #     elif language == "es":
-    #         title = "Inicia sesión"
-
-    #     time.sleep(1)
-
-    #     while True:
-    #         if self.browser.title != title:
-    #             logging.info("\nStarting LinkedIn bot\n")
-    #             break
-    #         else:
-    #             time.sleep(1)
-    #             logging.info("\nPlease Login to your LinkedIn account\n")
 
     def start_applying(self):
         # self.wait_for_login()
@@ -224,21 +208,28 @@ class EasyApplyBot:
         except:
             logging.info('Follow button not found')
         try:
-            submit_button = self.browser.find_element_by_css_selector(
-                'button[aria-label="Submit application"]')
+            if language == 'es':
+                submit_button = self.browser.find_element_by_css_selector(
+                    'button[aria-label="Enviar solicitud"]')
+            elif language == 'en':
+                submit_button = self.browser.find_element_by_css_selector(
+                    'button[aria-label="Submit application"]')
             submit_button.click()
             time.sleep(random.uniform(1.5, 2.5))
         except:
-            logging.info('Error trying to send resume, multi-step EasyApply')
-            return 'Error trying to send resume, multi-step EasyApply'
+            logging.info(
+                "Error trying to send resume, couldn't find "
+                "the Submit button, this could be a multi-step EasyApply")
+            return "Error trying to send resume, couldn't find " \
+                "the Submit button, this could be a multi-step EasyApply"
 
         logging.info('APPLIED!!!')
         return 'Applied!!'
 
     def avoid_lock(self):
-        x, _ = pyautogui.position()
-        pyautogui.moveTo(x+10, None, duration=1.0)
-        pyautogui.moveTo(x, None, duration=0.5)
+        x, y = pyautogui.position()
+        pyautogui.moveTo(x+15, y+10, duration=1.0)
+        pyautogui.moveTo(x, y, duration=0.5)
 
         time.sleep(0.5)
 
@@ -280,12 +271,14 @@ if __name__ == '__main__':
     password = config['LinkedInBot']["password"]
     position = config['LinkedInBot']["position"]
     location = config['LinkedInBot']["location"]
+    language = config['LinkedInBot']["language"]
 
     # logging.info input
     logging.info(msg=f'''Input selected:
         Username:   {username}
         Position:   {position}
-        Location:   {location}'''
+        Location:   {location}
+        Language:   {language}'''
                  )
     # get list of already applied jobs
     filename = 'joblist.csv'
@@ -297,5 +290,6 @@ if __name__ == '__main__':
 
     # start bot
     bot = EasyApplyBot(username, password, position,
-                       location, appliedJobIDs, filename)
+                       location, language, appliedJobIDs,
+                       filename)
     bot.start_applying()
