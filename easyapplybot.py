@@ -201,8 +201,12 @@ class EasyApplyBot:
         follow_button = None
         time.sleep(1)
         try:
-            follow_button = self.browser.find_element_by_xpath(
-                "//*[text()=' to stay up to date with their page.']")
+            if language == 'es':
+                follow_button = self.browser.find_element_by_xpath(
+                    "//*[text()=' para enterarte de las novedades de su página']")
+            elif language == 'en':
+                follow_button = self.browser.find_element_by_xpath(
+                    "//*[text()=' to stay up to date with their page.']")
             follow_button.click()
             time.sleep(random.uniform(0.5, 1.5))
         except:
